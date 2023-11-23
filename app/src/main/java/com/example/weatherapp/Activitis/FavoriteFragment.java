@@ -1,4 +1,4 @@
-package com.example.weatherapp;
+package com.example.weatherapp.Activitis;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.weatherapp.R;
 
 public class FavoriteFragment extends Fragment {
 

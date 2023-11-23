@@ -1,18 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<!--
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/lavender"
+    android:orientation="vertical"
     tools:context=".HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Home"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:textColor="@color/white"/>
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:text="SunTracker"
+        android:textColor="#E07070"
+        android:textSize="25sp"
+        android:textStyle="bold"></TextView>
 
-</FrameLayout>
+   <TextView
+       android:id="@+id/textView2"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:fontFamily="sans-serif"
+       android:gravity="center"
+       android:paddingTop="50dp"
+       android:text="Ma position"
+       android:textColor="#E07070"
+       android:textSize="40sp"
+       android:textStyle="bold" />!-->
+
+<!--<TextView
+    android:id="@+id/textView4"
+
+    android:gravity="center"
+    android:text="TextView" /> !--> <!-- La data name de la ville !-->
+
+<!--<ImageView
+android:id="@+id/backgroundImageView"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:scaleType="centerCrop"
+app:srcCompat="@drawable/cloudBackground" />!-->
+<!--</LinearLayout>!-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back_1"
+    tools:context=".Activitis.HomeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/hourTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Today"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Mon June 17"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_2"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/pic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    app:srcCompat="@drawable/cloudy_sunny" />
+
+                <TextView
+                    android:id="@+id/TextView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mostly Cloudy"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/TextView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="25°"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="43sp" />
+
+                <TextView
+                    android:id="@+id/TextView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="H:27 L:18"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="16dp"
+                        android:layout_weight="0.333"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/umbrella" />
+
+                        <TextView
+                            android:id="@+id/TextView8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="22%"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/TextView9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Rain"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="16dp"
+                        android:layout_weight="0.333"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/wind" />
+
+                        <TextView
+                            android:id="@+id/TextView10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="12 km/h"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/TextView11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Wind speed"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:layout_weight="0.333"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/humidity" />
+
+                        <TextView
+                            android:id="@+id/TextView6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="18%"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/TextView7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Humidity"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/TextView12"
+                    android:textColor="@color/yellow"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:text="Today"/>
+
+                <TextView
+                    android:id="@+id/TextView13"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Next 7 days"/>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="168dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:clipToPadding="false" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

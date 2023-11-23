@@ -1,13 +1,12 @@
-package com.example.weatherapp;
+package com.example.weatherapp.Activitis;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.view.View;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,15 +14,24 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.weatherapp.Adapter.HourlyAdapter;
+import com.example.weatherapp.Domains.Hourly;
+import com.example.weatherapp.R;
 import com.example.weatherapp.databinding.ActivityMainBinding;
 import com.example.weatherapp.manager.APIManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity implements LocationListener {
 
+    private RecyclerView.Adapter adapterHourly;
+    private RecyclerView recyclerView;
     private ActivityMainBinding binding;
     protected LocationManager locationManager;
     private Location currentLocation;
@@ -40,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         binding.bottomNavigationView.setBackground(null);
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
-
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     replaceFragment(new HomeFragment());
@@ -50,7 +57,6 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                     replaceFragment(new FavoriteFragment());
                     break;
             }
-
             return true;
         });
 
@@ -64,6 +70,30 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
 
         apiManager = new APIManager(getApplicationContext());
+
+        // Initialisation de la RecyclerView après la vérification des autorisations
+        initRecyclerView();
+    }
+
+
+    private void initRecyclerView() {
+        ArrayList<Hourly> items = new ArrayList<>();
+        items.add(new Hourly("10 pm", 28,"cloudy"));
+        items.add(new Hourly("11 pm", 29,"sun"));
+        items.add(new Hourly("12 pm", 30,"wind"));
+        items.add(new Hourly("1 am", 29,"rainly"));
+        items.add(new Hourly("2 am", 27,"storm"));
+
+        recyclerView=findViewById(R.id.view1);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        adapterHourly = new HourlyAdapter(items);
+        Log.d("Adapter" + adapterHourly.item;
+        recyclerView.setAdapter(adapterHourly);
+
+        Log.d("RecyclerView", "Item count: " + items.size());
+        Log.d("RecyclerView", "Adapter: " + recyclerView.getAdapter());
+
     }
 
     private void replaceFragment(Fragment fragment) {

@@ -1,8 +1,10 @@
-package com.example.weatherapp;
+package com.example.weatherapp.Activitis;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.weatherapp.R;
 
 public class SearchActivity extends AppCompatActivity {
 
