@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class HourlyAdapter extends RecyclerView.Adapter<HourlyAdapter.ViewHolder> {
 
-        public ArrayList<Hourly> items;
+    ArrayList<Hourly> items;
     Context context;
 
     public HourlyAdapter(ArrayList<Hourly> items){
