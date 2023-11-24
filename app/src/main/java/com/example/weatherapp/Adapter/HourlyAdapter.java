@@ -56,7 +56,7 @@ public class HourlyAdapter extends RecyclerView.Adapter<HourlyAdapter.ViewHolder
         public ViewHolder(@NonNull View itemView){
             super(itemView);
             hourTxt = itemView.findViewById(R.id.hourTxt);
-            tempTxt = itemView.findViewById(R.id.tempTxt);
+            tempTxt = itemView.findViewById(R.id.temp);
             pic = itemView.findViewById(R.id.pic);
         }
     }
